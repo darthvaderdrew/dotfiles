@@ -1,3 +1,13 @@
+" Plugins
+call plug#begin()
+
+" List your plugins here
+Plug 'tpope/vim-sensible'
+Plug 'morhetz/gruvbox'
+Plug 'itchyny/lightline.vim'
+
+call plug#end()
+
 " Behavior
 set nocompatible
 set autoread
@@ -53,6 +63,3 @@ highlight ExtraWhiteSpace ctermbg=red guibg=red
 match ExtraWhiteSpace /\s\+$/
 
 filetype plugin indent on
-
-" Autocommands
-" autocmd VimEnter * silent !find ~/.vim/undo -type f -mtime +31 -delete
