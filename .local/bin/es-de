@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ESDE_APPDATA_DIR="$HOME/Games/Emulation/ES-DE" "$HOME/Games/Emulation/ES-DE/ES-DE_x64.AppImage"

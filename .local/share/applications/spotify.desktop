@@ -1,5 +1,6 @@
 [Desktop Entry]
 Name=Spotify
+GenericName=Music Player
 Exec=~/.local/bin/spotify
 Icon=spotify
 Terminal=false
