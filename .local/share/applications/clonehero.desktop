@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Name=CloneHero
+Exec=env DRI_PRIME=1 /home/drew/.local/bin/clonehero
+Path=/home/drew/Games/clonehero-linux/
+Icon=/home/drew/Games/clonehero-linux/clonehero_Data/Resources/UnityPlayer.png
+Terminal=false
+Type=Application
+Categories=Game
+Comment=CloneHero
