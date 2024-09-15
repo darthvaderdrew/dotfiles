@@ -31,7 +31,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.wildmenu = true
 vim.opt.wildmode = { 'list', 'longest', 'full' }
-vim.opt.signcolumn = "no"
+vim.opt.signcolumn = "yes"
 
 vim.cmd[[highlight Normal guibg=NONE ctermbg=NONE]]
 vim.cmd[[highlight SignColumn guibg=NONE ctermbg=NONE]]
@@ -41,3 +41,15 @@ vim.cmd([[match ExtraWhiteSpace /\s\+$/]])
 -- Directories
 vim.opt.undofile = true
 vim.opt.undodir = vim.fn.expand('~/.config/nvim/undo')
+
+-- LSP Options
+vim.lsp.set_log_level("off")
+
+-- Diagnostics config
+vim.diagnostic.config({
+  virtual_text = true,
+  signs = true,
+  underline = true,
+  update_in_insert = true,
+  severity_sort = false,
+})
