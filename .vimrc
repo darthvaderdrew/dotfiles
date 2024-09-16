@@ -8,6 +8,11 @@ Plug 'itchyny/lightline.vim'
 
 call plug#end()
 
+" Keymaps
+let mapleader = "\<Space>"
+
+nnoremap <leader>b :ls<CR>:b
+
 " Behavior
 set nocompatible
 set autoread
