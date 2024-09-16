@@ -12,7 +12,17 @@ return {
       "WhoIsSethDaniel/mason-tool-installer.nvim",
     },
     lazy = false,
-    config = true,
+    config = function()
+      require("mason").setup({
+        ui = {
+          icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗",
+          },
+        },
+      })
+    end,
   },
 
   {
@@ -48,16 +58,6 @@ return {
         sign_text = true,
         lsp_attach = lsp_attach,
         capabilities = require("cmp_nvim_lsp").default_capabilities()
-      })
-
-      require("mason").setup({
-        ui = {
-          icons = {
-            package_installed = "✓",
-            package_pending = "➜",
-            package_uninstalled = "✗",
-          },
-        },
       })
 
       require("mason-lspconfig").setup({
