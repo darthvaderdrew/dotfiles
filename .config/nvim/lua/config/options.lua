@@ -1,7 +1,7 @@
 -- Behavior
 vim.opt.compatible = false
 vim.opt.autoread = true
-vim.opt.backspace = { 'indent', 'eol', 'start' }
+vim.opt.backspace = { "indent", "eol", "start" }
 vim.opt.scrolloff = 8
 vim.opt.hidden = true
 
@@ -30,17 +30,17 @@ vim.opt.showmatch = false
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.wildmenu = true
-vim.opt.wildmode = { 'list', 'longest', 'full' }
+vim.opt.wildmode = { "list", "longest" }
 vim.opt.signcolumn = "yes"
 
 vim.cmd[[highlight Normal guibg=NONE ctermbg=NONE]]
 vim.cmd[[highlight SignColumn guibg=NONE ctermbg=NONE]]
-vim.cmd([[highlight ExtraWhiteSpace ctermbg=red guibg=red]])
-vim.cmd([[match ExtraWhiteSpace /\s\+$/]])
+vim.cmd[[highlight ExtraWhiteSpace ctermbg=red guibg=red]]
+vim.cmd[[match ExtraWhiteSpace /\s\+$/]]
 
 -- Directories
 vim.opt.undofile = true
-vim.opt.undodir = vim.fn.expand('~/.config/nvim/undo')
+vim.opt.undodir = vim.fn.expand("~/.config/nvim/undo")
 
 -- LSP Options
 vim.lsp.set_log_level("off")
