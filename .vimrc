@@ -3,7 +3,7 @@ call plug#begin()
 
 " List your plugins here
 Plug 'tpope/vim-sensible'
-Plug 'morhetz/gruvbox'
+Plug 'gruvbox-community/gruvbox'
 Plug 'itchyny/lightline.vim'
 
 call plug#end()
@@ -41,6 +41,7 @@ set undodir=~/.vim/undo/
 set dir=~/.vim/swap/
 
 " Appearance
+set background=dark
 colorscheme gruvbox
 let g:lightline = {
       \ 'colorscheme': 'gruvbox',
