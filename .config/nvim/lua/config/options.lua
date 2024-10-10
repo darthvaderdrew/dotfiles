@@ -33,10 +33,10 @@ vim.opt.wildmenu = true
 vim.opt.wildmode = { "list", "longest" }
 vim.opt.signcolumn = "yes"
 
-vim.cmd[[highlight Normal guibg=NONE ctermbg=NONE]]
-vim.cmd[[highlight SignColumn guibg=NONE ctermbg=NONE]]
-vim.cmd[[highlight ExtraWhiteSpace ctermbg=red guibg=red]]
-vim.cmd[[match ExtraWhiteSpace /\s\+$/]]
+vim.cmd([[highlight Normal guibg=NONE ctermbg=NONE]])
+vim.cmd([[highlight SignColumn guibg=NONE ctermbg=NONE]])
+vim.cmd([[highlight ExtraWhiteSpace ctermbg=red guibg=red]])
+vim.cmd([[match ExtraWhiteSpace /\s\+$/]])
 
 -- Directories
 vim.opt.undofile = true
