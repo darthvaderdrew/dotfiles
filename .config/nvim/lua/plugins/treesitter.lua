@@ -6,10 +6,14 @@ return {
 
     configs.setup({
       ensure_installed = {
+        "c",
+        "markdown",
         "lua",
         "vim",
         "vimdoc",
         "query",
+        "javascript",
+        "html",
         "diff",
         "python",
         "java",
