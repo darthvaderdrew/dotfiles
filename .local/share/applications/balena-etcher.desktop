@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=balenaEtcher
+Exec=/home/drew/.local/bin/balena-etcher
+Icon=/home/drew/Applications/balenaEtcher-linux-x64/icon.png
+Terminal=false
+Type=Application
+Categories=Utility
+Comment=Flash OS images to SD cards & USB drives, safely and easily
