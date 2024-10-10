@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=ES-DE
-Exec=env DRI_PRIME=1 ~/.local/bin/es-de
-Icon=org.es_de.emulationstation-de
+Exec=env DRI_PRIME=1 /home/drew/.local/bin/es-de
+Icon=/home/drew/Games/Emulation/ES-DE/ES-DE.png
 Terminal=false
 Type=Application
 Categories=Game

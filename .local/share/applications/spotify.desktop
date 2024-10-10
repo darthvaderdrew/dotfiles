@@ -1,8 +1,9 @@
 [Desktop Entry]
 Name=Spotify
 GenericName=Music Player
-Exec=~/.local/bin/spotify
+Exec=/home/drew/.local/bin/spotify
 Icon=spotify
 Terminal=false
 Type=Application
 Categories=AudioVideo
+Comment=Listen to Music
