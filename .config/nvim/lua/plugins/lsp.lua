@@ -34,6 +34,11 @@ return {
       {"williamboman/mason.nvim"},
       {"williamboman/mason-lspconfig.nvim"},
     },
+    init = function()
+      -- Reserve a space in the gutter
+      -- This will avoid an annoying layout shift in the screen
+      vim.opt.signcolumn = "yes"
+    end,
     config = function()
       local lsp_zero = require("lsp-zero")
 
