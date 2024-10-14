@@ -22,7 +22,7 @@ vim.opt.smartcase = true
 
 -- Appearance
 vim.opt.termguicolors = true
-vim.opt.showmode = false
+-- vim.opt.showmode = false
 vim.opt.showcmd = true
 vim.opt.ruler = true
 -- vim.opt.cursorline = true
@@ -31,7 +31,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.wildmenu = true
 vim.opt.wildmode = { "list", "longest" }
-vim.opt.signcolumn = "yes"
+-- vim.opt.signcolumn = "yes"
 
 vim.cmd([[highlight Normal guibg=NONE ctermbg=NONE]])
 vim.cmd([[highlight SignColumn guibg=NONE ctermbg=NONE]])
