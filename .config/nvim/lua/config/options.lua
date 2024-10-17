@@ -43,13 +43,13 @@ vim.opt.undofile = true
 vim.opt.undodir = vim.fn.expand("~/.config/nvim/undo")
 
 -- LSP Options
-vim.lsp.set_log_level("off")
+-- vim.lsp.set_log_level("off")
 
 -- Diagnostics config
-vim.diagnostic.config({
-  virtual_text = true,
-  signs = true,
-  underline = true,
-  update_in_insert = true,
-  severity_sort = false,
-})
+-- vim.diagnostic.config({
+--   virtual_text = true,
+--   signs = true,
+--   underline = true,
+--   update_in_insert = true,
+--   severity_sort = false,
+-- })
