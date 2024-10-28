@@ -1,0 +1,9 @@
+# vim
+.vim/backups/
+.vim/plugged/
+.vim/swap/
+.vim/undo/
+.vim/viminfo
+
+# nvim
+.config/nvim/undo/
