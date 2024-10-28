@@ -37,12 +37,12 @@ set smartcase
 
 " Directories
 set undofile
-set undodir=~/.vim/undo/
-set directory=~/.vim/swap/
+set undodir=~/.config/vim/undo/
+set directory=~/.config/vim/swap/
 " set backup
-set backupdir=~/.vim/backups/
-set viminfofile=~/.vim/viminfo
-let g:netrw_dirhistmax = 0
+set backupdir=~/.config/vim/backups/
+set viminfofile=~/.config/vim/viminfo
+let g:netrw_dirhistmax =0
 
 " Appearance
 set background=dark
