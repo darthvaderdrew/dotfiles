@@ -6,4 +6,7 @@
 .config/vim/viminfo
 
 # nvim
+.config/nvim/backups/
+.config/nvim/shada/
+.config/nvim/swap/
 .config/nvim/undo/
