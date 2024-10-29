@@ -4,6 +4,7 @@ vim.opt.autoread = true
 vim.opt.backspace = { "indent", "eol", "start" }
 vim.opt.scrolloff = 8
 vim.opt.hidden = true
+vim.opt.mouse = "a"
 
 -- Tabbing
 vim.opt.tabstop = 2
@@ -21,6 +22,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 -- Appearance
+vim.opt.title = true
 vim.opt.termguicolors = true
 -- vim.opt.showmode = false
 vim.opt.showcmd = true
@@ -40,7 +42,12 @@ vim.cmd([[match ExtraWhiteSpace /\s\+$/]])
 
 -- Directories
 vim.opt.undofile = true
-vim.opt.undodir = vim.fn.expand("~/.config/nvim/undo")
+vim.opt.undodir = vim.fn.expand("~/.config/nvim/undo//")
+vim.opt.directory = vim.fn.expand("~/.config/nvim/swap//")
+-- vim.opt.backup = true
+vim.opt.backupdir = vim.fn.expand("~/.config/nvim/backups//")
+vim.opt.shadafile = vim.fn.expand("~/.config/nvim/shada/main.shada")
+vim.g.netrw_dirhistmax = 0
 
 -- LSP Options
 -- vim.lsp.set_log_level("off")
