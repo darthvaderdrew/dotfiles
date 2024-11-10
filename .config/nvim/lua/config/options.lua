@@ -42,11 +42,11 @@ vim.cmd([[match ExtraWhiteSpace /\s\+$/]])
 
 -- Directories
 vim.opt.undofile = true
-vim.opt.undodir = vim.fn.expand("~/.config/nvim/undo//")
-vim.opt.directory = vim.fn.expand("~/.config/nvim/swap//")
+vim.opt.undodir = vim.fn.expand("~/.local/state/nvim/undo//")
+vim.opt.directory = vim.fn.expand("~/.local/state/nvim/swap//")
 -- vim.opt.backup = true
-vim.opt.backupdir = vim.fn.expand("~/.config/nvim/backups//")
-vim.opt.shadafile = vim.fn.expand("~/.config/nvim/shada/main.shada")
+vim.opt.backupdir = vim.fn.expand("~/.local/state/nvim/backups//")
+vim.opt.shadafile = vim.fn.expand("~/.local/state/nvim/shada/main.shada")
 vim.g.netrw_dirhistmax = 0
 
 -- LSP Options
