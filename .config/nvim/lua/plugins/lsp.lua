@@ -50,7 +50,6 @@ return {
       })
     end,
     config = function()
-      local lsp_zero = require("lsp-zero")
       local lsp_defaults = require("lspconfig").util.default_config
 
       -- Add cmp_nvim_lsp capabilities settings to lspconfig
@@ -81,6 +80,8 @@ return {
         end,
       })
 
+      local noop = function() end
+
       require("mason-lspconfig").setup({
         ensure_installed = {
           "ruff",
@@ -95,7 +96,7 @@ return {
 
           -- this is the "custom handler" for `jdtls`
           -- noop is an empty function that doesn't do anything
-          jdtls = lsp_zero.noop,
+          jdtls = noop,
         }
       })
 
@@ -107,18 +108,11 @@ return {
       })
 
       -- set custom diagnostic symbols in the sign column (gutter)
-      lsp_zero.set_sign_icons({
-        error = "󰅚",
-        warn = "󰀪",
-        hint = "󰌶",
-        info = "󰋽"
-      })
-      -- without calling lsp_zero
-      -- local signs = { Error = "󰅚", Warn = "󰀪", Hint = "󰌶", Info = "󰋽" }
-      -- for type, icon in pairs(signs) do
-      --   local hl = "DiagnosticSign" .. type
-      --   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-      -- end
+      local signs = { Error = "󰅚", Warn = "󰀪", Hint = "󰌶", Info = "󰋽" }
+      for type, icon in pairs(signs) do
+        local hl = "DiagnosticSign" .. type
+        vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+      end
 
     end
   }

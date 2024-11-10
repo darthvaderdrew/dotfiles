@@ -2,12 +2,12 @@ local java_cmds = vim.api.nvim_create_augroup('java_cmds', {clear = true})
 local cache_vars = {}
 
 -- Here you can add files/folders that you use at
--- the root of your project. `nvim-jdtls` will use 
+-- the root of your project. `nvim-jdtls` will use
 -- these to find the path to your project source code.
 local root_files = {
   '.git',
 
-  --- here are more examples files that may or 
+  --- here are more examples files that may or
   --- may not work as root files, according to some guy on the internet
   -- 'mvnw',
   -- 'gradlew',
@@ -83,12 +83,12 @@ local function get_jdtls_paths()
   end
 
   ---
-  -- Useful if you're starting jdtls with a Java version that's 
+  -- Useful if you're starting jdtls with a Java version that's
   -- different from the one the project uses.
   ---
   path.runtimes = {
     -- Note: the field `name` must be a valid `ExecutionEnvironment`,
-    -- you can find the list here: 
+    -- you can find the list here:
     -- https://github.com/eclipse/eclipse.jdt.ls/wiki/Running-the-JAVA-LS-server-from-the-command-line#initialize-request
     --
     -- This example assume you are using sdkman: https://sdkman.io
@@ -140,7 +140,7 @@ local function jdtls_on_attach(client, bufnr)
 
   -- The following mappings are based on the suggested usage of nvim-jdtls
   -- https://github.com/mfussenegger/nvim-jdtls#usage
-  
+
   local opts = {buffer = bufnr}
   vim.keymap.set('n', '<A-o>', "<cmd>lua require('jdtls').organize_imports()<cr>", opts)
   vim.keymap.set('n', 'crv', "<cmd>lua require('jdtls').extract_variable()<cr>", opts)
@@ -185,7 +185,7 @@ local function jdtls_setup(event)
     'java.base/java.util=ALL-UNNAMED',
     '--add-opens',
     'java.base/java.lang=ALL-UNNAMED',
-    
+
     -- 💀
     '-jar',
     path.launcher_jar,
