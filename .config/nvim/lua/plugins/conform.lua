@@ -16,6 +16,8 @@ return {
         prepend_args = { "--line-length", "120" },
       }
     },
+    -- Levels by name: "TRACE", "DEBUG", "INFO", "WARN", "ERROR", "OFF"
+    -- Level numbers begin with "TRACE" at 0
     log_level = vim.log.levels.OFF
   },
 
