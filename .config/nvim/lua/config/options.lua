@@ -49,6 +49,12 @@ vim.opt.backupdir = vim.fn.expand("~/.local/state/nvim/backups//")
 vim.opt.shadafile = vim.fn.expand("~/.local/state/nvim/shada/main.shada")
 vim.g.netrw_dirhistmax = 0
 
+-- Autocommands
+-- vim.api.nvim_create_autocmd("BufWritePre", {
+--   pattern = "*",
+--   command = "TrimWhitespace"
+-- })
+
 -- LSP Options
 -- vim.lsp.set_log_level("off")
 

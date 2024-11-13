@@ -38,8 +38,10 @@ return {
       -- Reserve a space in the gutter
       -- This will avoid an annoying layout shift in the screen
       vim.opt.signcolumn = "yes"
-      -- disable writing lsp logs to ~/.local/state/nvim/lsp.log
-      vim.lsp.set_log_level("off")
+      -- Set lsp log level
+      -- Levels by name: "TRACE", "DEBUG", "INFO", "WARN", "ERROR", "OFF"
+      -- Level numbers begin with "TRACE" at 0
+      vim.lsp.set_log_level("OFF")
       -- Diagnostics config
       vim.diagnostic.config({
         virtual_text = true,
