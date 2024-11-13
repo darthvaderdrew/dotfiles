@@ -5,7 +5,7 @@ case $- in
 esac
 
 # Path to your oh-my-bash installation.
-export OSH='/home/drew/.oh-my-bash'
+export OSH="$HOME/.local/share/oh-my-bash"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-bash is loaded.
@@ -133,7 +133,11 @@ export PATH="$HOME/.local/bin:$PATH"
 # else
 #   export EDITOR='mvim'
 # fi
-export EDITOR=vim
+export EDITOR="vim"
+
+export HISTFILE="$HOME/.local/state/bash/history"
+export HISTSIZE=-1
+export HISTFILESIZE=-1
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
