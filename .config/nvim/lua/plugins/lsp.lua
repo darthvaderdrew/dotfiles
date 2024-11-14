@@ -90,6 +90,7 @@ return {
 
       require("mason-lspconfig").setup({
         ensure_installed = {
+          "pyright",
           "ruff",
           "jdtls",
         },
@@ -105,6 +106,25 @@ return {
           jdtls = noop,
         }
       })
+
+      -- Disable some settings when using alongside Ruff
+      require("lspconfig").pyright.setup {
+        -- https://github.com/astral-sh/ruff-lsp/issues/384#issuecomment-2038623937
+        settings = {
+          pyright = {
+            disableOrganizeImports = true,
+            disableTaggedHints = true,
+          },
+          python = {
+            analysis = {
+              diagnosticSeverityOverrides = {
+                -- https://github.com/microsoft/pyright/blob/main/docs/configuration.md#type-check-diagnostics-settings
+                reportUndefinedVariable = "none",
+              },
+            },
+          },
+        },
+      }
 
       require("mason-tool-installer").setup({
         ensure_installed = {
