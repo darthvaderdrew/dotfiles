@@ -37,6 +37,7 @@ return {
       {"hrsh7th/cmp-nvim-lsp"},
       {"williamboman/mason.nvim"},
       {"williamboman/mason-lspconfig.nvim"},
+      {"https://git.sr.ht/~whynothugo/lsp_lines.nvim"},
     },
     init = function()
       -- Reserve a space in the gutter
@@ -48,7 +49,8 @@ return {
       vim.lsp.set_log_level("OFF")
       -- Diagnostics config
       vim.diagnostic.config({
-        virtual_text = true,
+        virtual_text = false, -- should be turned off when using lsp_lines to avoid duplication
+        virtual_lines = true,
         signs = true,
         underline = true,
         update_in_insert = true,
@@ -132,6 +134,8 @@ return {
           "black",
         },
       })
+
+      require("lsp_lines").setup()
 
       -- set custom diagnostic symbols in the sign column (gutter)
       local signs = { Error = "󰅚", Warn = "󰀪", Hint = "󰌶", Info = "󰋽" }
