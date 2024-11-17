@@ -37,7 +37,6 @@ return {
       {"hrsh7th/cmp-nvim-lsp"},
       {"williamboman/mason.nvim"},
       {"williamboman/mason-lspconfig.nvim"},
-      {"https://git.sr.ht/~whynothugo/lsp_lines.nvim"},
     },
     init = function()
       -- Reserve a space in the gutter
@@ -49,12 +48,11 @@ return {
       vim.lsp.set_log_level("OFF")
       -- Diagnostics config
       vim.diagnostic.config({
-        virtual_text = false, -- should be turned off when using lsp_lines to avoid duplication
-        virtual_lines = true,
-        signs = true,
-        underline = true,
-        update_in_insert = true,
-        severity_sort = false,
+        virtual_text = true, -- display inline diagnostics
+        signs = true, -- enable signs in the signcolumn/gutter
+        underline = true, -- underline text that has diagnostics
+        update_in_insert = true, -- update in insert mode
+        severity_sort = false, -- sort diagnostics based on severity
       })
     end,
     config = function()
@@ -88,10 +86,11 @@ return {
         end,
       })
 
+      -- noop is an empty function that doesn't do anything
       local noop = function() end
 
       require("mason-lspconfig").setup({
-        ensure_installed = {
+        ensure_installed = { -- language servers to be installed and automatically setup
           "pyright",
           "ruff",
           "jdtls",
@@ -104,7 +103,6 @@ return {
           end,
 
           -- this is the "custom handler" for `jdtls`
-          -- noop is an empty function that doesn't do anything
           jdtls = noop,
         }
       })
@@ -129,13 +127,11 @@ return {
       }
 
       require("mason-tool-installer").setup({
-        ensure_installed = {
+        ensure_installed = { -- tools to be installed
           "isort",
           "black",
         },
       })
-
-      require("lsp_lines").setup()
 
       -- set custom diagnostic symbols in the sign column (gutter)
       local signs = { Error = "󰅚", Warn = "󰀪", Hint = "󰌶", Info = "󰋽" }
