@@ -1,5 +1,6 @@
 local M = {}
 
+-- delete all trailing whitespace in a file
 function M.TrimWhitespace()
     local save = vim.fn.winsaveview()
     vim.cmd("%s/\\s\\+$//e")
