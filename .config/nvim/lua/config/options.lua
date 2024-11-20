@@ -54,10 +54,3 @@ vim.opt.directory = vim.fn.expand("~/.local/state/nvim/swap//") -- set directory
 vim.opt.backupdir = vim.fn.expand("~/.local/state/nvim/backups//") -- set directory for backup files
 vim.opt.shadafile = vim.fn.expand("~/.local/state/nvim/shada/main.shada") -- set the shada file location
 vim.g.netrw_dirhistmax = 0 -- disable netrwhist file
-
--- Autocommands
--- delete all trailing whitespace on save
--- vim.api.nvim_create_autocmd("BufWritePre", {
---   pattern = "*",
---   command = "TrimWhitespace"
--- })
