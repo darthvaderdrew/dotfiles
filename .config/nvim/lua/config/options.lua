@@ -1,3 +1,5 @@
+-- file to set options for neovim
+
 -- Behavior
 vim.opt.compatible = false
 vim.opt.autoread = true -- automatically reload file if changes were made on disk
@@ -5,6 +7,7 @@ vim.opt.backspace = { "indent", "eol", "start" } -- fix backspacing
 vim.opt.scrolloff = 8 -- number of scroll lines to keep above/below cursor
 vim.opt.hidden = true -- allow editing multiple files without saving first
 vim.opt.mouse = "a" -- enable mouse support in all modes
+vim.opt.clipboard:append("unnamedplus") -- use system clipboard
 
 -- Tabbing/indentation
 vim.opt.tabstop = 2 -- set number of spaces for tabbing
@@ -32,10 +35,7 @@ vim.opt.showmatch = false -- highlight matching parentheses
 vim.opt.number = true -- display line numbers
 vim.opt.relativenumber = true -- display line numbers relative to the cursor
 vim.opt.wildmenu = true
-vim.opt.wildmode = {
-  "list", -- list all possible completions
-  "longest" -- automatically complete longest common part
-}
+vim.opt.wildmode = { "list:longest" }
 -- vim.opt.signcolumn = "yes" -- enable signcolumn/gutter
 
 -- use the same background as the current terminal
@@ -49,6 +49,7 @@ vim.cmd([[match ExtraWhiteSpace /\s\+$/]])
 -- Directories
 vim.opt.undofile = true -- set persistent undo
 vim.opt.undodir = vim.fn.expand("~/.local/state/nvim/undo//") -- set directory for undo files
+vim.opt.swapfile = true -- enable swapfile
 vim.opt.directory = vim.fn.expand("~/.local/state/nvim/swap//") -- set directory for swap files
 -- vim.opt.backup = true -- store backup of last write
 vim.opt.backupdir = vim.fn.expand("~/.local/state/nvim/backups//") -- set directory for backup files

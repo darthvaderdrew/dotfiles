@@ -1,3 +1,5 @@
+-- file to set custom functions for neovim
+
 local M = {}
 
 -- delete all trailing whitespace in a file
