@@ -6,6 +6,9 @@ vim.keymap.set("n", "<Space>", "<Nop>", { silent = true, remap = false })
 vim.keymap.set("n", "<Tab>", vim.cmd.bnext, { silent = true, noremap = true }) -- next buffer
 vim.keymap.set("n", "<S-Tab>", vim.cmd.bprev, { silent = true, noremap = true }) -- previous buffer
 
+vim.keymap.set("n", "<leader>dn", ":lua vim.diagnostic.goto_next()<CR>", { silent = true, noremap = true }) -- next diagnostic
+vim.keymap.set("n", "<leader>dp", ":lua vim.diagnostic.goto_prev()<CR>", { silent = true, noremap = true }) -- previous diagnostic
+
 vim.keymap.set("n", "<leader>l", vim.cmd.Lexplore, { silent = true, noremap = true }) -- open file explorer on the left
 
 -- Keymaps for custom functions
