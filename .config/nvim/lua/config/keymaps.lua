@@ -14,3 +14,5 @@ vim.keymap.set("n", "<leader>dp", ":lua vim.diagnostic.goto_prev()<CR>", { silen
 vim.keymap.set("n", "<leader>l", vim.cmd.Lexplore, { silent = true, noremap = true }) -- open file explorer on the left
 
 vim.keymap.set("n", "<leader>w", ":TrimWhitespace<CR>", { silent = true, noremap = true }) -- delete all trailing whitespace
+
+vim.keymap.set("n", "<leader>g", ":Gitsigns toggle_signs<CR>", { silent = true, noremap = true}) -- toggle gitsigns
