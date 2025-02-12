@@ -1,8 +1,9 @@
 [Desktop Entry]
-Name=ES-DE
-Exec=env DRI_PRIME=1 /home/drew/.local/bin/es-de
+Name=ES-DE Frontend
+Exec=env DRI_PRIME=1 ESDE_APPDATA_DIR=/home/drew/Games/Emulation/ES-DE/ /home/drew/.local/bin/es-de
 Icon=/home/drew/Games/Emulation/ES-DE/ES-DE.png
 Terminal=false
 Type=Application
 Categories=Game
-Comment=Emulation Frontend
+Comment=EmulationStation Desktop Edition
+Keywords=esde, emulationstation

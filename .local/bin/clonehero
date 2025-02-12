@@ -3,4 +3,5 @@
 # Fixes the black screen after playing a few songs
 ulimit -n `ulimit -Hn`
 
-"$HOME/Games/clonehero/clonehero-linux/clonehero"
+cd "$HOME/Games/clonehero/clonehero-linux/" || exit
+./clonehero

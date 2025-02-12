@@ -1,8 +1,10 @@
 [Desktop Entry]
-Name=FxFloorBoard
+Name=Katana FxFloorBoard
 Exec=/home/drew/.local/bin/fxfloorboard
-Icon=/home/drew/Applications/Katana_MK2_FxFloorBoard_linux/Katana-MK2-FxFloorBoard.png
+Path=/home/drew/Applications/Katana_MK2_FxFloorBoard_linux/
+Icon=/home/drew/Applications/Katana_MK2_FxFloorBoard_linux/icon.png
 Terminal=false
 Type=Application
 Categories=Utility
 Comment=Editing software for the Boss Katana guitar modelling and effects amplifier
+Keywords=boss katana,guitar,amplifier
