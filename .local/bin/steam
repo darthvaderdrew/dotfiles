@@ -1,5 +1,6 @@
-# https://github.com/ValveSoftware/steam-for-linux/issues/1890#issuecomment-2367103614
 #!/bin/bash
+
+# https://github.com/ValveSoftware/steam-for-linux/issues/1890#issuecomment-2367103614
 
 set -euxo pipefail
 

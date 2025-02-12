@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd "$HOME/Applications/Katana_MK2_FxFloorBoard_linux" || exit
+cd "$HOME/Applications/Katana_MK2_FxFloorBoard_linux/" || exit
 ./Katana-MK2-FxFloorBoard
