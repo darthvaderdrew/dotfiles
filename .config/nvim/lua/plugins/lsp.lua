@@ -124,6 +124,7 @@ return {
         ensure_installed = { -- tools to be installed
           "isort",
           "black",
+          "sqlfluff",
         },
       })
 
