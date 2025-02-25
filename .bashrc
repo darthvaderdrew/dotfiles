@@ -139,6 +139,8 @@ export HISTFILE="$HOME/.local/state/bash/history"
 export HISTSIZE=-1
 export HISTFILESIZE=-1
 
+complete -o default cd
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
