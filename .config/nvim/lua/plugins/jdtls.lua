@@ -1,4 +1,5 @@
 -- https://lsp-zero.netlify.app/blog/setup-with-nvim-jdtls#show-me-the-code
+
 local java_cmds = vim.api.nvim_create_augroup('java_cmds', {clear = true})
 local cache_vars = {}
 
@@ -294,4 +295,5 @@ vim.api.nvim_create_autocmd('FileType', {
 return {
   "mfussenegger/nvim-jdtls",
   lazy = true,
+  ft = "java",
 }
