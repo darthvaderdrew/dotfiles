@@ -3,15 +3,12 @@
 local M = {}
 
 -- delete all trailing whitespace in a file
-function M.TrimWhitespace()
-    local save = vim.fn.winsaveview()
+function M.trim_whitespace()
+    local current_state = vim.fn.winsaveview()
     vim.cmd("%s/\\s\\+$//e")
-    vim.fn.winrestview(save)
+    vim.fn.winrestview(current_state)
 end
+vim.api.nvim_create_user_command("TrimWhitespace", M.trim_whitespace, {})
 
--- Define custom commands
-vim.api.nvim_create_user_command("TrimWhitespace", function()
-    M.TrimWhitespace()
-end, {})
 
 return M
