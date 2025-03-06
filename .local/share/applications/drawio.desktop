@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=draw.io
+Exec=/home/drew/.local/bin/drawio
+Icon=/home/drew/Applications/drawio/logo.png
+Terminal=false
+Type=Application
+Categories=Graphics;Utility
+Comment=Security-first diagramming for teams
+Keywords=drawio
+URL=https://www.drawio.com/
