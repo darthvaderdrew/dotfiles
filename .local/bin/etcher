@@ -1,3 +1,4 @@
 #!/bin/bash
 
-"$HOME/Applications/balenaEtcher"
+cd "$HOME/Applications/balenaEtcher-linux-x64/" || exit
+./balena-etcher

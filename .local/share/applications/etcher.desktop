@@ -1,8 +1,10 @@
 [Desktop Entry]
 Name=Etcher
 Exec=/home/drew/.local/bin/etcher
-Icon=etcher
+Icon=/home/drew/Applications/balenaEtcher-linux-x64/icon.png
 Terminal=false
 Type=Application
 Categories=Utility
 Comment=Flash OS images to SD cards & USB drives
+Keywords=balena
+URL=https://etcher.balena.io/
