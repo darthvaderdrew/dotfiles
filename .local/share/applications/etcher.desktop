@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=Etcher
 Exec=/home/drew/.local/bin/etcher
+Path=/home/drew/Applications/balenaEtcher-linux-x64/
 Icon=/home/drew/Applications/balenaEtcher-linux-x64/icon.png
 Terminal=false
 Type=Application
