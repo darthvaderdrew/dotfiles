@@ -12,10 +12,10 @@ return {
       "InsertLeave",
     },
       {
-      pattern = "*",
-      callback = function()
-        require("lint").try_lint()
-      end,
-    })
+        pattern = "*",
+        callback = function()
+          require("lint").try_lint()
+        end,
+      })
   end,
 }
