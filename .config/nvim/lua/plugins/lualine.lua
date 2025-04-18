@@ -4,8 +4,8 @@ return {
     { "nvim-tree/nvim-web-devicons", lazy = true },
   },
   init = function()
-  -- set showmode to false
-  -- this prevents having two statuslines at once
+    -- set showmode to false
+    -- this prevents having two statuslines at once
     vim.opt.showmode = false
   end,
   opts = {
