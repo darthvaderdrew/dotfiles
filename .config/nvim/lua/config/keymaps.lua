@@ -1,10 +1,8 @@
--- file to set custom keymaps for neovim
-
 -- Set mapleader to space and make sure it's not mapped to anything else
 vim.g.mapleader = " "
 vim.keymap.set("n", "<Space>", "<Nop>", { silent = true, remap = false })
 
--- Define keymaps
+-- Define custom keymaps
 vim.keymap.set("n", "<Tab>", vim.cmd.bnext, { silent = true, noremap = true }) -- next buffer
 vim.keymap.set("n", "<S-Tab>", vim.cmd.bprev, { silent = true, noremap = true }) -- previous buffer
 

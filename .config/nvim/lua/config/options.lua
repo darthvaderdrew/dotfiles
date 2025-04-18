@@ -1,5 +1,3 @@
--- file to set options for neovim
-
 -- Behavior
 vim.opt.compatible = false
 vim.opt.autoread = true -- automatically reload file if changes were made on disk
@@ -7,7 +5,7 @@ vim.opt.backspace = { "indent", "eol", "start" } -- fix backspacing
 vim.opt.scrolloff = 8 -- number of scroll lines to keep above/below cursor
 vim.opt.hidden = true -- allow editing multiple files without saving first
 vim.opt.mouse = "a" -- enable mouse support in all modes
-vim.opt.clipboard:append("unnamedplus") -- use system clipboard
+-- vim.opt.clipboard = "unnamedplus" -- use system clipboard
 
 -- Tabbing/indentation
 vim.opt.tabstop = 2 -- set number of spaces for tabbing
@@ -25,6 +23,7 @@ vim.opt.ignorecase = true -- case-insensitive searching
 vim.opt.smartcase = true -- override ignorecase if search contains uppercase letters
 
 -- Appearance
+-- vim.opt.background = "dark"
 vim.opt.title = true -- let nvim set terminal titlebar to the current file name
 vim.opt.termguicolors = true -- enable full color suppot
 -- vim.opt.showmode = false -- show mode in statusline
