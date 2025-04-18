@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd "$HOME/Applications/handyoutliner_1.1.6.4/"
+cd "$HOME/Applications/handyoutliner/" || exit
 ./start-linux

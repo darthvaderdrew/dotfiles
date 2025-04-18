@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=ES-DE Frontend
 Exec=env DRI_PRIME=1 ESDE_APPDATA_DIR=/home/drew/Games/Emulation/ES-DE/ /home/drew/.local/bin/es-de
+Path=/home/drew/Games/Emulation/ES-DE/
 Icon=/home/drew/Games/Emulation/ES-DE/ES-DE.png
 Terminal=false
 Type=Application

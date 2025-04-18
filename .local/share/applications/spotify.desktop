@@ -2,9 +2,11 @@
 Name=Spotify
 GenericName=Music Player
 Exec=/home/drew/.local/bin/spotify
+Path=/home/drew/Applications/spotify/
 Icon=/home/drew/Applications/spotify/icon.png
 Terminal=false
 Type=Application
 Categories=AudioVideo
 Comment=Listen to Music
+Keywords=music
 URL=https://github.com/ivan-hc/Spotify-AppImage/

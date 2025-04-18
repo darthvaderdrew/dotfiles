@@ -1,8 +1,8 @@
 [Desktop Entry]
 Name=HandyOutliner
 Exec=/home/drew/.local/bin/handyoutliner
-Path=/home/drew/Applications/handyoutliner_1.1.6.4/
-Icon=/home/drew/Applications/handyoutliner_1.1.6.4/icon.png
+Path=/home/drew/Applications/handyoutliner/
+Icon=/home/drew/Applications/handyoutliner/icon.png
 Terminal=false
 Type=Application
 Categories=Utility
