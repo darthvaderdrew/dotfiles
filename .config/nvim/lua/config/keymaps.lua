@@ -15,4 +15,4 @@ vim.keymap.set("n", "<leader>l", vim.cmd.Lexplore, { silent = true, noremap = tr
 
 vim.keymap.set("n", "<leader>w", ":TrimWhitespace<CR>", { silent = true, noremap = true }) -- delete all trailing whitespace
 
-vim.keymap.set("n", "<leader>g", ":Gitsigns toggle_signs<CR>", { silent = true, noremap = true}) -- toggle gitsigns
+vim.keymap.set("n", "<leader>gs", ":Gitsigns toggle_signs<CR>", { silent = true, noremap = true }) -- toggle gitsigns
