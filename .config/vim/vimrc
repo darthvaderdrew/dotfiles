@@ -14,7 +14,7 @@ let mapleader = "\<Space>"
 
 nnoremap <leader>b :ls<CR>:b
 
-noremap <Leader>w :call TrimWhitespace()<CR>
+noremap <Leader>w :TrimWhitespace<CR>
 
 " Behavior
 set nocompatible
@@ -80,13 +80,10 @@ match ExtraWhiteSpace /\s\+$/
 filetype plugin indent on
 
 " Custom functions
-fun! TrimWhitespace()
-    let l:save = winsaveview()
+function! s:trim_whitespace()
+    let l:current_state = winsaveview()
     keeppatterns %s/\s\+$//e
-    call winrestview(l:save)
+    call winrestview(l:current_state)
 endfun
 
-command! TrimWhitespace call TrimWhitespace()
-
-" Autocommands
-" autocmd BufWritePre * call TrimWhitespace()
+command! TrimWhitespace call s:trim_whitespace()
