@@ -20,7 +20,17 @@ return {
       lualine_b = {
         "branch",
         "diff",
-        "diagnostics",
+        {
+          "diagnostics",
+          sources = { "nvim_diagnostic" },
+          symbols = {
+            error = " ",
+            warn = " ",
+            info = " ",
+            hint = " ",
+          },
+          update_in_insert = true,
+        },
         "buffers",
       },
       lualine_c = {
