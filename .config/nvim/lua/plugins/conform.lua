@@ -25,7 +25,6 @@ return {
     },
     -- Set conform log level
     -- Levels by name: "TRACE", "DEBUG", "INFO", "WARN", "ERROR", "OFF"
-    -- Level numbers begin with "TRACE" at 0
     log_level = vim.log.levels.OFF,
   },
 
