@@ -23,6 +23,8 @@ vim.g.maplocalleader = "\\"
 
 -- Setup lazy.nvim
 require("lazy").setup({
+  ui = { border = "rounded" },
+  change_detection = { notify = false },
   rocks = {
     -- disable luarocks
     enabled = false
