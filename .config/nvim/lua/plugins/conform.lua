@@ -5,6 +5,8 @@ return {
   opts = {
     formatters_by_ft = {
       python = { "isort", "black" },
+      -- trim whitespace for files with no formatter available
+      ["_"] = { "trim_whitespace", lsp_format = "prefer" },
     },
     default_format_opts = {
       lsp_format = "fallback",
