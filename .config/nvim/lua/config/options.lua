@@ -38,8 +38,8 @@ vim.opt.wildmode = { "list:longest" }
 -- vim.opt.signcolumn = "yes" -- enable signcolumn/gutter
 
 -- use the same background as the current terminal
-vim.cmd([[highlight Normal guibg=NONE ctermbg=NONE]])
-vim.cmd([[highlight SignColumn guibg=NONE ctermbg=NONE]])
+-- vim.cmd([[highlight Normal guibg=NONE ctermbg=NONE]])
+-- vim.cmd([[highlight SignColumn guibg=NONE ctermbg=NONE]])
 
 -- highlight trailing whitespace red
 vim.cmd([[highlight ExtraWhiteSpace ctermbg=red guibg=red]])

@@ -7,5 +7,7 @@ return {
     -- load the colorscheme here
     vim.opt.background = "dark" -- or "light" for light mode
     vim.cmd([[colorscheme gruvbox]])
+    vim.cmd([[highlight Normal guibg=NONE ctermbg=NONE]])
+    vim.cmd([[highlight SignColumn guibg=NONE ctermbg=NONE]])
   end,
 }
