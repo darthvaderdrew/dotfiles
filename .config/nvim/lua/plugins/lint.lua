@@ -3,6 +3,7 @@ return {
   event = { "BufReadPre", "BufNewFile" },
   config = function()
     require("lint").linters_by_ft = {
+      yaml = { "yamllint" },
       sql = { "sqlfluff" },
     },
 
@@ -10,6 +11,8 @@ return {
       "BufEnter",
       "BufWritePost",
       "InsertLeave",
+      "TextChanged",
+      "TextChangedI",
     },
       {
         pattern = "*",

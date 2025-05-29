@@ -26,6 +26,8 @@ return {
         -- tools
         "isort",
         "black",
+        "yamllint",
+        "sqlfluff",
       },
     })
   end,
