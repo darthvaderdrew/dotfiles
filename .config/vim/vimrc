@@ -65,7 +65,8 @@ set termguicolors
 set noshowmode
 set showcmd
 set ruler
-" set cursorline
+set cursorline
+set cursorlineopt=number
 set noshowmatch
 set number
 set relativenumber
