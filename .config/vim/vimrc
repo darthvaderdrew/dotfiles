@@ -6,6 +6,7 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
 Plug 'gruvbox-community/gruvbox'
 Plug 'itchyny/lightline.vim'
+Plug 'mbbill/undotree'
 
 call plug#end()
 
@@ -14,7 +15,10 @@ let mapleader = "\<Space>"
 
 nnoremap <leader>b :ls<CR>:b
 
-noremap <Leader>w :TrimWhitespace<CR>
+nnoremap <leader>w :TrimWhitespace<CR>
+
+let g:undotree_SetFocusWhenToggle = 1
+nnoremap <leader>u :UndotreeToggle<CR>
 
 " Behavior
 set nocompatible
