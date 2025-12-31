@@ -13,10 +13,10 @@ return {
     vim.lsp.set_log_level("OFF")
     -- Diagnostics config
     vim.diagnostic.config({
-      virtual_text = true,     -- display inline diagnostics
-      underline = true,        -- underline text that has diagnostics
+      virtual_text = true, -- display inline diagnostics
+      underline = true, -- underline text that has diagnostics
       update_in_insert = true, -- update in insert mode
-      severity_sort = false,   -- sort diagnostics based on severity
+      severity_sort = false, -- sort diagnostics based on severity
       signs = {
         text = {
           [vim.diagnostic.severity.ERROR] = "",
@@ -37,7 +37,14 @@ return {
     local lspconfig = require("lspconfig")
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-    lspconfig.pyright.setup({
+    local function setup_lsp(name, opts)
+      opts = opts or {}
+      opts.capabilities = capabilities
+      vim.lsp.config(name, opts)
+      vim.lsp.enable(name)
+    end
+
+    setup_lsp("pyright", {
       capabilities = capabilities,
       -- Disable some settings when using alongside Ruff
       -- https://github.com/astral-sh/ruff-lsp/issues/384
@@ -57,14 +64,13 @@ return {
           },
         },
       },
-
     })
 
-    lspconfig.ruff.setup({
+    setup_lsp("ruff", {
       capabilities = capabilities,
     })
 
-    lspconfig.lua_ls.setup({
+    setup_lsp("lua_ls", {
       capabilities = capabilities,
       settings = {
         Lua = {
