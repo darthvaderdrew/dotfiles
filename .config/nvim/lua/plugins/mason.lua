@@ -22,6 +22,7 @@ return {
         "pyright",
         "ruff",
         "jdtls",
+        "lua-language-server",
 
         -- tools
         "isort",

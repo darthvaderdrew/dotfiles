@@ -63,5 +63,24 @@ return {
     lspconfig.ruff.setup({
       capabilities = capabilities,
     })
+
+    lspconfig.lua_ls.setup({
+      capabilities = capabilities,
+      settings = {
+        Lua = {
+          diagnostics = {
+            globals = { "vim" },
+          },
+          format = {
+            enable = false,
+          },
+          workspace = {
+            library = {
+              "${3rd}/love2d/library",
+            },
+          },
+        },
+      },
+    })
   end
 }
