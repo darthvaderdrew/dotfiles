@@ -47,11 +47,18 @@ vim.cmd([[highlight ExtraWhiteSpace ctermbg=red guibg=red]])
 vim.cmd([[match ExtraWhiteSpace /\s\+$/]])
 
 -- Directories
+local state = vim.fn.stdpath("state")
+local function state_path(subdir)
+    local dir = state .. "/" .. subdir
+    vim.fn.mkdir(dir, "p")
+    return dir
+end
+
 vim.opt.undofile = true -- set persistent undo
-vim.opt.undodir = vim.fn.expand("~/.local/state/nvim/undo//") -- set directory for undo files
+vim.opt.undodir = state_path("undo").. "//" -- set directory for undo files
 vim.opt.swapfile = true -- enable swapfile
-vim.opt.directory = vim.fn.expand("~/.local/state/nvim/swap//") -- set directory for swap files
+vim.opt.directory = state_path("swap") .. "//" -- set directory for swap files
 -- vim.opt.backup = true -- store backup of last write
-vim.opt.backupdir = vim.fn.expand("~/.local/state/nvim/backups//") -- set directory for backup files
-vim.opt.shadafile = vim.fn.expand("~/.local/state/nvim/shada/main.shada") -- set the shada file location
+-- vim.opt.backupdir =  state_path("backup") .. "//" -- set directory for backup files
+vim.opt.shadafile = state_path("shada") .. "/main.shada" -- set the shada file location
 vim.g.netrw_dirhistmax = 0 -- disable netrwhist file

@@ -44,12 +44,17 @@ set ignorecase
 set smartcase
 
 " Directories
+let s:vimstate = expand('~/.local/state/vim')
+for dir in ['undo', 'swap', 'backup']
+    call mkdir(s:vimstate . '/' . dir, 'p')
+endfor
+
 set undofile
-set undodir=~/.local/state/vim/undo//
-set directory=~/.local/state/vim/swap//
+let &undodir=s:vimstate . '/undo//'
+let &directory=s:vimstate . '/swap//'
 " set backup
-set backupdir=~/.local/state/vim/backups//
-set viminfofile=~/.local/state/vim/viminfo
+" let &backupdir=s:vimstate . '/backup//'
+let &viminfofile=s:vimstate . '/viminfo'
 let g:netrw_dirhistmax=0
 
 " Appearance
