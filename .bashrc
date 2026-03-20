@@ -30,6 +30,7 @@ HISTSIZE=-1
 
 shopt -s checkwinsize
 shopt -s histappend
+shopt -s autocd
 
 # prompt
 for git_ps1_path in \
@@ -39,6 +40,7 @@ for git_ps1_path in \
     if [[ -f "$git_ps1_path" ]]; then
         GIT_PS1_SHOWDIRTYSTATE=1
         source "$git_ps1_path"
+        unset git_ps1_path
         break
     fi
 done
@@ -47,20 +49,34 @@ if ! declare -F __git_ps1 &>/dev/null; then
     echo "Warning: git-prompt.sh not found; git info will not be available."
 fi
 
-clr_red="\[$(tput setaf 1)\]"
-clr_green="\[$(tput setaf 2)\]"
-clr_yellow="\[$(tput setaf 3)\]"
-clr_blue="\[$(tput setaf 4)\]"
-clr_cyan="\[$(tput setaf 6)\]"
-clr_gray="\[$(tput setaf 8)\]"
-clr_bold="\[$(tput bold)\]"
-clr_reset="\[$(tput sgr0)\]"
+__prompt_command() {
+    local exit_status="$?"
+    local git_ps1_prompt=""
+    local arrow_color
 
-PROMPT_COMMAND='
-[[ $? -eq 0 ]] && clr_arrow="${clr_green}" || clr_arrow="${clr_red}"
-git_ps1_prompt="$(declare -F __git_ps1 &>/dev/null && __git_ps1 "|%s|" || :)"
-PS1="${clr_blue}\t ${clr_gray}\u@\h ${clr_cyan}\w ${clr_yellow}${git_ps1_prompt}${clr_bold}${clr_arrow}→${clr_reset} "
-'
+    local clr_red="\[\e[31m\]"
+    local clr_green="\[\e[32m\]"
+    local clr_yellow="\[\e[33m\]"
+    local clr_blue="\[\e[34m\]"
+    local clr_cyan="\[\e[36m\]"
+    local clr_gray="\[\e[37m\]"
+    local clr_bold="\[\e[1m\]"
+    local clr_reset="\[\e[0m\]"
+
+    if [[ "$exit_status" -eq 0 ]]; then
+        arrow_color="$clr_green"
+    else
+        arrow_color="$clr_red"
+    fi
+
+    if declare -F __git_ps1 &>/dev/null; then
+        git_ps1_prompt="$(__git_ps1 "|%s|")"
+    fi
+
+    PS1="${clr_blue}\t ${clr_gray}\u@\h ${clr_cyan}\w ${clr_yellow}${git_ps1_prompt}${clr_bold}${arrow_color}→${clr_reset} "
+}
+
+PROMPT_COMMAND="__prompt_command"
 
 # aliases and functions
 alias dotfiles='git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
@@ -69,25 +85,25 @@ if [[ -f /usr/share/bash-completion/completions/git ]]; then
     __git_complete dotfiles __git_main
 fi
 
-alias e="nvim"
-alias c="clear"
-alias l="ls -lha --color=auto"
-alias l.="ls -d .* --color=auto"
-alias ls="ls --color=auto"
-alias la="ls -lhA --color=auto"
-alias ll="ls -lAFh --color=auto"
-alias cp="cp -iv"
-alias mv="mv -iv"
-alias rm="rm -Iv"
-alias df="df -h"
-alias du="du -sh"
-alias src='source $HOME/.bashrc'
-alias free="free -h"
+alias e='nvim'
+alias c='clear'
+alias l='ls -lha --color=auto'
+alias l.='ls -d .* --color=auto'
+alias ls='ls --color=auto'
+alias la='ls -lhA --color=auto'
+alias ll='ls -lAFh --color=auto'
+alias cp='cp -iv'
+alias mv='mv -iv'
+alias rm='rm -Iv'
+alias df='df -h'
+alias du='du -sh'
+alias src='. ~/.bashrc'
+alias free='free -h'
 alias path='echo -e ${PATH//:/\\n}'
 alias curl='curl -w "\n"'
-alias grep="grep --color=auto"
-alias mkdir="mkdir -pv"
-alias rmdir="rmdir -v"
-alias which="type -a"
+alias grep='grep --color=auto'
+alias mkdir='mkdir -pv'
+alias rmdir='rmdir -v'
+alias which='type -a'
 
 t(){ tmux new -As "${1:-main}"; }
