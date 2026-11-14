@@ -24,8 +24,6 @@ opt.signcolumn = "yes"
 opt.wrap = true
 opt.linebreak = true
 opt.showmode = false
-opt.winborder = "rounded"
-opt.pumborder = "rounded"
 
 -- Persistence
 opt.undofile = true
