@@ -3,16 +3,15 @@
 [[ $- != *i* ]] && return
 
 if shopt -q progcomp && [[ -f /usr/share/bash-completion/bash_completion ]]; then
-    . /usr/share/bash-completion/bash_completion
+    source /usr/share/bash-completion/bash_completion
 fi
 
 # environment
 path_dirs=(
     "$HOME/.local/bin"
-    "$HOME/.local/share/nvim/mason/bin"
 )
 for d in "${path_dirs[@]}"; do
-    if [[ -d "$d" ]] && ! [[ "$PATH" =~ "$d" ]]; then
+    if [[ -d "$d" && ":$PATH:" != *":$d:"* ]]; then
         PATH="$d:$PATH"
     fi
 done
@@ -39,11 +38,11 @@ for git_ps1_path in \
     /usr/lib/git-core/git-sh-prompt; do
     if [[ -f "$git_ps1_path" ]]; then
         GIT_PS1_SHOWDIRTYSTATE=1
-        . "$git_ps1_path"
-        unset git_ps1_path
+        source "$git_ps1_path"
         break
     fi
 done
+unset git_ps1_path
 
 if ! declare -F __git_ps1 &>/dev/null; then
     echo "Warning: git-prompt.sh not found; git info will not be available."
@@ -59,30 +58,33 @@ __prompt_command() {
     local clr_yellow="\[\e[33m\]"
     local clr_blue="\[\e[34m\]"
     local clr_cyan="\[\e[36m\]"
-    local clr_gray="\[\e[90m\]"
+    local clr_white="\[\e[37m\]"
     local clr_bold="\[\e[1m\]"
     local clr_reset="\[\e[0m\]"
 
-    if [[ "$exit_status" -eq 0 ]]; then
+    if (( exit_status == 0 )); then
         arrow_color="$clr_green"
     else
         arrow_color="$clr_red"
     fi
 
     if declare -F __git_ps1 &>/dev/null; then
-        git_ps1_prompt="$(__git_ps1 "|%s|")"
+        git_ps1_prompt="$(__git_ps1 " |%s|")"
     fi
 
-    PS1="${clr_blue}\t ${clr_gray}\u@\h ${clr_cyan}\w ${clr_yellow}${git_ps1_prompt}${clr_bold}${arrow_color}→${clr_reset} "
+    PS1="${clr_blue}\t ${clr_white}\u@\h ${clr_cyan}\w${clr_yellow}${git_ps1_prompt} ${clr_bold}${arrow_color}→${clr_reset} "
 }
 
 PROMPT_COMMAND="__prompt_command"
 
 # aliases and functions
 alias dotfiles='git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
+
 if [[ -f /usr/share/bash-completion/completions/git ]]; then
-    . /usr/share/bash-completion/completions/git
-    __git_complete dotfiles __git_main
+    source /usr/share/bash-completion/completions/git
+    if declare -F __git_complete &>/dev/null; then
+        __git_complete dotfiles __git_main
+    fi
 fi
 
 alias e='nvim'
@@ -97,7 +99,7 @@ alias mv='mv -iv'
 alias rm='rm -Iv'
 alias df='df -h'
 alias du='du -sh'
-alias src='. "$HOME/.bashrc"'
+alias src='source "$HOME/.bashrc"'
 alias free='free -h'
 alias path='echo -e ${PATH//:/\\n}'
 alias curl='curl -w "\n"'
