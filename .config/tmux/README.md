@@ -4,6 +4,10 @@
 
 Install [TPM](https://github.com/tmux-plugins/tpm) to manage plugins.
 
+```sh
+git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
+```
+
 ## Setup
 
 Install plugins:
