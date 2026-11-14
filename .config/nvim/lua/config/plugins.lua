@@ -17,12 +17,10 @@ vim.pack.add({
     },
 
     -- Completion
-    "https://github.com/saghen/blink.lib",
     {
         src = "https://github.com/saghen/blink.cmp",
         version = vim.version.range("1.*"),
     },
-    "https://github.com/rafamadriz/friendly-snippets",
 })
 
 local map = vim.keymap.set
