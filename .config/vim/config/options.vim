@@ -12,7 +12,6 @@ set smartindent
 set ignorecase
 set smartcase
 set nohlsearch
-set wildmenu
 set wildmode=list:longest
 
 " Display
@@ -26,6 +25,11 @@ set wrap
 set linebreak
 set noshowmode
 set showtabline=2
+
+" Cursor shape
+let &t_SI = "\e[6 q"
+let &t_SR = "\e[4 q"
+let &t_EI = "\e[2 q"
 
 " Persistence
 let s:state = expand('~/.local/state/vim')
