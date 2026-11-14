@@ -89,8 +89,8 @@ vim.api.nvim_create_autocmd("FileType", {
 require("blink.cmp").setup({
     keymap = {
         preset = "enter",
-        ["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
-        ["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
+        ["<Tab>"] = { "select_next", "fallback" },
+        ["<S-Tab>"] = { "select_prev", "fallback" },
     },
 
     sources = {
