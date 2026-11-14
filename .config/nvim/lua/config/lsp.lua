@@ -5,21 +5,16 @@ lsp.config("*", {
 })
 
 -- Python
-lsp.config("pyright", {
-    cmd = { "pyright-langserver", "--stdio" },
+lsp.config("ty", {
+    cmd = { "ty", "server" },
     filetypes = { "python" },
     root_markers = {
-        "pyrightconfig.json",
+        "ty.toml",
         "pyproject.toml",
         "setup.py",
         "setup.cfg",
         "requirements.txt",
         ".git",
-    },
-    settings = {
-        pyright = {
-            disableOrganizeImports = true,
-        },
     },
 })
 
@@ -54,7 +49,7 @@ lsp.config("lua_ls", {
     },
 })
 
--- Prefer Pyright for hover and Conform for formatting
+-- Prefer ty for hover and Conform for formatting
 vim.api.nvim_create_autocmd("LspAttach", {
     callback = function(args)
         local client = vim.lsp.get_client_by_id(args.data.client_id)
@@ -68,7 +63,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 -- Enable language servers
-lsp.enable({ "pyright", "ruff", "lua_ls" })
+lsp.enable({ "ty", "ruff", "lua_ls" })
 
 -- Diagnostics
 local severity = vim.diagnostic.severity

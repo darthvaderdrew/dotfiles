@@ -11,7 +11,7 @@ Install the following tools and ensure they're available on `$PATH`:
 - `ripgrep` (`rg`) - Project searching and file discovery
 - `tree-sitter` CLI (>= 0.26.1) - Parser installation
 - C compiler, `curl`, `tar` - Parser compilation and installation
-- `pyright` - Python language server
+- `ty` - Python type checker and language server
 - `ruff` - Python linting and formatting
 - `lua-language-server` - Lua language server
 
