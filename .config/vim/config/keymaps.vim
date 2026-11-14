@@ -7,3 +7,4 @@ nnoremap <silent> <leader>l :Lexplore<CR>
 
 " Command line
 cnoremap <C-a> <Home>
+cnoremap <C-d> <Del>

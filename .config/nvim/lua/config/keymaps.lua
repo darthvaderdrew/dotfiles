@@ -9,3 +9,4 @@ map("n", "<leader>l", "<cmd>Lexplore<cr>", { desc = "Toggle file explorer" })
 
 -- Command line
 map("c", "<C-a>", "<Home>", { desc = "Beginning of command line" })
+map("c", "<C-d>", "<Del>", { desc = "Delete character under cursor" })
